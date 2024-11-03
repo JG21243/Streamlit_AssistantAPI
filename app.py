@@ -5,9 +5,9 @@ import streamlit as st
 from openai import OpenAI
 from tavily import TavilyClient
 
-# Initialize API clients
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-tavily_client = TavilyClient(api_key="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")
+# Initialize clients with API keys
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+tavily_client = TavilyClient(api_key=st.secrets["TAVILY_API_KEY"])
 
 # Define assistant behavior
 assistant_prompt_instruction = """
